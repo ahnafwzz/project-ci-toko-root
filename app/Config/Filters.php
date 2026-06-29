@@ -30,10 +30,14 @@ class Filters extends BaseFilters
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'auth'          => \App\Filters\Auth::class,
+        'rootAuth'      => \App\Filters\RootFilter::class, // INI SATPAM BARU KITA
         'cors'          => Cors::class,
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'role'          => \App\Filters\Role::class,
+        'maintenance'   => \App\Filters\MaintenanceFilter::class, // SATPAM BARU
     ];
 
     /**
@@ -72,11 +76,13 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
+            'maintenance' => ['except' => ['login', 'auth', 'auth/*', 'logout']],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
         ],
         'after' => [
+            'toolbar',
             // 'honeypot',
             // 'secureheaders',
         ],

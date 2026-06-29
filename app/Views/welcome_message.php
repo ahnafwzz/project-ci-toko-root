@@ -225,9 +225,8 @@
 
     <div class="heroe">
 
-        <h1>Welcome to CodeIgniter <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
-
-        <h2>The small framework with powerful features</h2>
+        <h1>Halo, ini Tugas Web Lanjut Ahnaf!</h1>
+        <h2>Versi CodeIgniter: <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h2>
 
     </div>
 
