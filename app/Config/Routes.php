@@ -43,6 +43,9 @@ $routes->get('/contact', 'ContactController::index', ['filter' => 'auth']);
 $routes->get('faq', 'FaqController::index', ['filter' => 'auth']);
 $routes->get('profile', 'ProfileController::index', ['filter' => 'auth']);
 
+$routes->get('search', 'SearchController::index');
+$routes->get('search/suggestions', 'SearchController::suggestions'); // Rute untuk Live Search
+
 // === BLOK RUTE KHUSUS LEVEL ROOT ===
 $routes->group('root', ['filter' => 'rootAuth'], static function ($routes) {
     // Dashboard biasa
